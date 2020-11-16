@@ -1,8 +1,12 @@
 import './App.scss';
+import { Modal } from './components/Modal/Modal';
 
 function App() {
   return (
-    <div className="App">React Modal App</div>
+    <div className="App">
+      <button className="App__button">Открыть модалку</button>
+      <Modal />
+    </div>
   );
 }
 

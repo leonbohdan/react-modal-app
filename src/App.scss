@@ -1,3 +1,11 @@
+@import './styles/utils';
+
 .App {
-  text-align: center;
+  background-color: $bgc-app;
+  height: 100vh;
+
+  &__button {
+    position: absolute;
+    font-family: 'Montserrat';
+  }
 }
