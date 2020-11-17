@@ -5,8 +5,6 @@ import { Modal } from './components/Modal/Modal';
 function App() {
   const [open, setOpen] = useState(false);
 
-  console.log(open);
-
   return (
     <div className="App">
 
@@ -24,7 +22,10 @@ function App() {
         </button>
       )}
 
-      <Modal open={open} setOpen={setOpen} />
+      <Modal
+        open={open}
+        setOpen={setOpen}
+      />
     </div>
   );
 }
