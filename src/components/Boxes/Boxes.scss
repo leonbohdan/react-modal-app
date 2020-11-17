@@ -20,6 +20,7 @@
     cursor: pointer;
 
     @include hover(border-color, $border-color-inner-active);
+    transition: transform 0.5s ease-in-out;
 
     &.is-active {
       transform: scale(1.2);

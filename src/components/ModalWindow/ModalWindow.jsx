@@ -44,9 +44,36 @@ export const ModalWindow = ({
     }, 1000);
   }
 
+  function warning() {
+    Modal.warning({
+      title: "Операция не доступна!",
+      content: "Выберите сумму пополнения!",
+    });
+  }
+
+  function success() {
+    Modal.success({
+      title: "Операция успешна!",
+      content: (
+        <div>
+          <p>{`На ваш счет будет зачислено: $${sum}.`}</p>
+          <p>{`Способ оплаты: ${cardType}.`}</p>
+        </div>
+      ),
+      onOk() {
+        handleClose();
+        setTimeout(() => {
+          setOpen(false);
+        }, 500);
+      },
+    });
+  }
+
   function handleSubmit() {
     if (sum === 0) {
-      
+      warning();
+    } else {
+      success();
     }
   }
 
@@ -64,26 +91,31 @@ export const ModalWindow = ({
 
       <div className="Modal__trigger">+100%</div>
 
-      <BackwardsTimer open={open} setOpen={setOpen} />
+      <BackwardsTimer
+        className="Modal__timer"
+        open={open}
+        setOpen={setOpen}
+      />
 
       <h1 className="Modal__name">Увеличьте свой депозит!</h1>
 
-      <Select
+      <select
         className="Modal__select"
-        defaultValue={cardType}
-        style={{ width: 400 }}
-        onChange={handleChange}
+        value={cardType}
+        onChange={(event) => {
+          handleChange(event.target.value);
+        }}
       >
-        <Option className="Modal__option" value="Банковская карта">
+        <option className="Modal__option" value="Банковская карта">
           Банковская карта
-        </Option>
-        <Option className="Modal__option" value="Биткоин">
+        </option>
+        <option className="Modal__option" value="Биткоин">
           Биткоин
-        </Option>
-        <Option className="Modal__option" value="Выставить счет">
+        </option>
+        <option className="Modal__option" value="Выставить счет">
           Выставить счет
-        </Option>
-      </Select>
+        </option>
+      </select>
 
       <Boxes setSum={setSum} boxes={boxes} setBoxes={setBoxes} />
 
@@ -98,7 +130,7 @@ export const ModalWindow = ({
       <button
         className="Modal__button"
         onClick={() => {
-          alert(`На ваш счет будет зачислено: $${sum}. Способ оплаты: ${cardType}.`);
+          handleSubmit();
         }}
       >
         Пополнить

@@ -18,24 +18,26 @@ export const BackwardsTimer = ({ open, setOpen }) => {
 
   return (
     <div className="Timer">
-      <div className="Timer__img"></div>
-      {open ? (
-        <Timer
-          initialTime={time}
-          direction="backward"
-          formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
-        >
-          {() => (
-            <>
-              <Timer.Hours />:
-              <Timer.Minutes />:
-              <Timer.Seconds />
-            </>
-          )}
-        </Timer>
-      ) : (
-        ""
-      )}
+      <div className="Timer__box">
+        <div className="Timer__img"></div>
+        {open ? (
+          <Timer
+            initialTime={time}
+            direction="backward"
+            formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
+          >
+            {() => (
+              <>
+                <Timer.Hours />:
+                <Timer.Minutes />:
+                <Timer.Seconds />
+              </>
+            )}
+          </Timer>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };
