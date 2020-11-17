@@ -1,0 +1,73 @@
+@import '../../styles/utils';
+
+.Boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 164px;
+    height: 186px;
+    background-color: $bgc-modal-inner;
+    border: 2px solid $border-color-inner;
+    box-shadow: 8px 8px 20px rgba(24, 28, 38, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+
+    @include hover(border-color, $border-color-inner-active);
+
+    &.is-active {
+      transform: scale(1.2);
+      border-color: $border-color-inner-active;
+    }
+  }
+
+  &__up {
+    margin-bottom: 11px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    color: $text-color-2;
+
+    &--sum {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 100%;
+      color: $text-color-2;
+    }
+  }
+
+  &__get {
+    margin-top: 19px;
+    margin-bottom: 11px;
+
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 100%;
+    color: $text-color-1;
+
+    &--sum {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 100%;
+      color: $text-color-1;
+    }
+  }
+}
+
+.is-active {
+  transform: scale(1.2);
+}

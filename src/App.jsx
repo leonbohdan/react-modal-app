@@ -1,15 +1,14 @@
 import './App.scss';
 import { useState } from 'react';
-import { Modal } from './components/Modal/Modal';
+import { ModalWindow } from "./components/ModalWindow/ModalWindow";
 
 function App() {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="App">
-
       {open ? (
-        ''
+        ""
       ) : (
         <button
           type="button"
@@ -22,7 +21,7 @@ function App() {
         </button>
       )}
 
-      <Modal
+      <ModalWindow
         open={open}
         setOpen={setOpen}
       />
