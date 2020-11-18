@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CN from 'classnames';
 import { BackwardsTimer } from '../Timer/BackwardsTimer';
 import { Boxes } from '../Boxes/Boxes';
-import { Select, Modal, Button, Space } from "antd";
+import { Modal } from "antd";
 import 'antd/dist/antd.css';
 
 export const ModalWindow = ({
@@ -16,13 +16,9 @@ export const ModalWindow = ({
     { id: 3, up: 500, get: 1000, active: false },
   ];
 
-  const { Option } = Select;
   const [boxes, setBoxes] = useState(initialBoxes);
   const [sum, setSum] = useState(0);
   const [cardType, setCardType] = useState('Банковская карта');
-  
-  console.log(sum);
-  console.log(cardType);
 
   function handleChange(value) {
     setCardType(value);

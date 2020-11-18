@@ -14,6 +14,10 @@
     flex-direction: row;
     align-items: flex-start;
 
+    &::after {
+      @include under_button;
+    }
+
     @include button;
 
     &:active {

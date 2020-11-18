@@ -1,11 +1,8 @@
 @import '../../styles/utils';
 
 .Timer {
-  // display: block;
-  // position: relative;
-  // margin: 0 auto;
   color: $text-color-1;
-  width: 120px;
+  width: 115px;
   height: 22px;
 
   font-family: Gilroy;
@@ -16,17 +13,12 @@
 
   &__box {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-
-    // margin: 43px 0 27px 0;
   }
 
   &__img {
     display: block;
-    // position: absolute;
-    // top: -1px;
-    // left: -32px;
     background-image: url(../../images/timer.svg);
     background-repeat: no-repeat;
     background-position: center;

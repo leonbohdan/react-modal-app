@@ -6,6 +6,7 @@
   grid-column-gap: 10px;
 
   &__box {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,13 +20,44 @@
     border-radius: 5px;
     cursor: pointer;
 
-    @include hover(border-color, $border-color-inner-active);
-    transition: transform 0.5s ease-in-out;
-
     &.is-active {
       transform: scale(1.2);
       border-color: $border-color-inner-active;
+      z-index: 1;
+
+      &::before {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-87%, 20%);
+        content: url(../../images/choosed.svg);
+        display: block;
+        width: 16px;
+        height: 16px;
+        z-index: 1;
+      }
     }
+
+    &::after {
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      content: ' ';
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: $bgc-check-c;
+      border: 2px solid $border-color-inner;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
+
+    &::after:hover {
+      border-color: $border-color-inner-active;
+    }
+
+    @include hover(border-color, $border-color-inner-active);
   }
 
   &__up {

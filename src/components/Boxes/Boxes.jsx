@@ -1,12 +1,7 @@
 import './Boxes.scss';
-import { useEffect, useState } from 'react';
 import CN from 'classnames';
 
 export const Boxes = ({ setSum, boxes, setBoxes }) => {
-  const [active, setActive] = useState(false);
-
-  console.log(boxes);
-  console.log(active);
 
   const selectBox = ({ id, get }) => {
     setSum(get);

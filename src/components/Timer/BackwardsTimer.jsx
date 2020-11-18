@@ -4,7 +4,6 @@ import Timer from 'react-compound-timer';
 
 export const BackwardsTimer = ({ open, setOpen }) => {
   const [time, setTime] = useState(0);
-  console.log(time);
 
   useEffect(() => {
     setTime(16 * 60 * 1001);
