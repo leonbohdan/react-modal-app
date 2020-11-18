@@ -1,0 +1,28 @@
+@import '../../styles/utils';
+
+.Timer {
+  color: $text-color-1;
+  width: 115px;
+  height: 22px;
+
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    display: block;
+    background-image: url(../../images/timer.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,3 +1,27 @@
+@import './styles/utils';
+
 .App {
-  text-align: center;
+  background-color: $bgc-app;
+  height: 100vh;
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    &::after {
+      @include under_button;
+    }
+
+    @include button;
+
+    &:active {
+      transform: scale(0), opacity(0);
+    }
+  }
 }

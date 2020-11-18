@@ -1,0 +1,105 @@
+@import '../../styles/utils';
+
+.Boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+
+  &__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 164px;
+    height: 186px;
+    background-color: $bgc-modal-inner;
+    border: 2px solid $border-color-inner;
+    box-shadow: 8px 8px 20px rgba(24, 28, 38, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, transform 0.5s ease-in-out;
+
+    &.is-active {
+      transform: scale(1.2);
+      border-color: $border-color-inner-active;
+      z-index: 1;
+
+      &::before {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-87%, 20%);
+        content: url(../../images/choosed.svg);
+        display: block;
+        width: 16px;
+        height: 16px;
+        z-index: 1;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      content: ' ';
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: $bgc-check-c;
+      border: 2px solid $border-color-inner;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      border-color: $border-color-inner-active;
+    }
+  }
+
+  &__up {
+    margin-bottom: 11px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    color: $text-color-2;
+
+    &--sum {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 100%;
+      color: $text-color-2;
+    }
+  }
+
+  &__get {
+    margin-top: 19px;
+    margin-bottom: 11px;
+
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 100%;
+    color: $text-color-1;
+
+    &--sum {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 100%;
+      color: $text-color-1;
+    }
+  }
+}
+
+.is-active {
+  transform: scale(1.2);
+}

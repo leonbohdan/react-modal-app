@@ -1,0 +1,37 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s ease-in-out, transform 0.5s ease-in-out;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin button {
+  position: relative;
+  padding: 14px 24px;
+  background-color: $btn-bgc;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+
+  font-family: 'Montserrat';
+  font-size: 14px;
+  line-height: 100%;
+  color: $btn-tx-c;
+  cursor: pointer;
+
+  @include hover(opacity, 0.8);
+}
+
+@mixin under_button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  content: ' ';
+  width: 75px;
+  height: 28px;
+  background: $btn-bgc;
+  opacity: 0.9;
+  filter: blur(40px);
+  border-radius: 5px;
+}
